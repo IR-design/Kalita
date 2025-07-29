@@ -134,7 +134,7 @@ const Activities: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">Kegiatan RT 003 / RW 05</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">Cluster Kalita</h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           Ikuti berbagai kegiatan menarik dan bermanfaat untuk mempererat tali silaturahmi warga
         </p>
