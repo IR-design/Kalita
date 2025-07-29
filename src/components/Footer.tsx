@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                 <Home className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-lg font-bold">RT 003 / RW 05</h3>
+                <h3 className="text-lg font-bold">Cluster Kalita</h3>
                 <p className="text-gray-400 text-sm">Hatra Mahkota Sejahtera - Cluster Kalita</p>
               </div>
             </div>
