@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                 </div>
                 <div className="ml-3">
                   <div className="text-lg font-bold text-gray-900">Cluster Kalita</div>
-                  <div className="text-sm text-gray-600">Kelurahan Maju Jaya</div>
+                  <div className="text-sm text-gray-600">Kabupaten Bekasi</div>
                 </div>
               </div>
             </div>
