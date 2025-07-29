@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-medium text-gray-800">Alamat</p>
-                  <p className="text-gray-600">Hatra Mahkota Sejahtera - Cluster Kalita<br />Jakarta Selatan 12345</p>
+                  <p className="text-gray-600">Hatra Mahkota Sejahtera - Cluster Kalita<br />Babelan Kota</p>
                 </div>
               </div>
               
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <MessageCircle className="h-5 w-5 text-green-600 mr-3" />
-                <span className="text-gray-700">WhatsApp Group RT: bit.ly/wa-rt003</span>
+                <span className="text-gray-700">WhatsApp Group Paguyuban: bit.ly/wa-rt003</span>
               </div>
               <div className="flex items-center">
                 <span className="text-blue-600 mr-3">📘</span>
@@ -168,8 +168,8 @@ const Contact: React.FC = () => {
         <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
           <div className="text-center text-gray-500">
             <MapPin className="h-12 w-12 mx-auto mb-2" />
-            <p>Peta Lokasi RT 003 / RW 05</p>
-            <p className="text-sm">Kelurahan Maju Jaya, Jakarta Selatan</p>
+            <p>Peta Lokasi Cluster Kalita</p>
+            <p className="text-sm">Kec.Babelan, Kabupaten Bekasi</p>
           </div>
         </div>
       </div>
