@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
     <div className="max-w-6xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
-        <p className="text-lg text-gray-600">Informasi kontak dan lokasi RT 003 / RW 05</p>
+        <p className="text-lg text-gray-600">Informasi kontak dan lokasi Cluster Kalita</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
