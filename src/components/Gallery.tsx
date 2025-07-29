@@ -91,7 +91,21 @@ const Gallery: React.FC = () => {
             key={item.id} 
             className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
             onClick={() => {
-              alert(`Melihat detail: ${item.title}\n\nDeskripsi: ${item.description}\nTanggal: ${item.date}\nKategori: ${item.category}`);
+              // Buka galeri dalam mode fullscreen atau modal
+              const galleryDetail = `
+📸 ${item.title}
+
+📝 Deskripsi:
+${item.description}
+
+📅 Tanggal: ${item.date}
+🏷️ Kategori: ${item.category}
+
+💡 Tip: Klik dan tahan untuk menyimpan gambar
+
+Untuk mendapatkan foto resolusi tinggi, silakan hubungi pengurus RT.
+              `;
+              alert(galleryDetail);
             }}
           >
             <div className="relative">

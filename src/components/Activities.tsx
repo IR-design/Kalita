@@ -220,7 +220,30 @@ const Activities: React.FC = () => {
                 <button 
                   className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all duration-200"
                   onClick={() => {
-                    alert(`Pendaftaran untuk kegiatan "${activity.title}" akan segera dibuka. Silakan hubungi pengurus RT untuk informasi lebih lanjut.`);
+                    // Proses pendaftaran kegiatan
+                    const registrationInfo = `
+🎯 PENDAFTARAN KEGIATAN
+
+📋 Kegiatan: ${activity.title}
+📅 Tanggal: ${formatDate(activity.date)}
+⏰ Waktu: ${activity.time}
+📍 Lokasi: ${activity.location}
+👥 Kuota: ${activity.participants}/${activity.maxParticipants} peserta
+
+📝 Cara Daftar:
+1. Hubungi pengurus RT: 0812-3456-7890
+2. WhatsApp: bit.ly/wa-rt003
+3. Datang langsung ke kantor RT
+
+💰 Biaya: Gratis untuk warga RT
+🎁 Fasilitas: Sesuai jenis kegiatan
+
+⚠️ Catatan: Daftar segera, kuota terbatas!
+                    `;
+                    
+                    if (confirm(`${registrationInfo}\n\nApakah Anda ingin melanjutkan pendaftaran?`)) {
+                      alert(`Terima kasih! Anda akan dihubungi oleh ${activity.organizer} untuk konfirmasi pendaftaran kegiatan "${activity.title}".`);
+                    }
                   }}
                 >
                   Daftar
@@ -250,7 +273,32 @@ const Activities: React.FC = () => {
         <button 
           className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           onClick={() => {
-            alert('Silakan hubungi pengurus RT melalui kontak yang tersedia untuk mengajukan kegiatan baru.');
+            // Form pengajuan kegiatan baru
+            const proposalForm = `
+📝 FORM PENGAJUAN KEGIATAN BARU
+
+Untuk mengajukan kegiatan baru, siapkan informasi berikut:
+
+1️⃣ Nama Kegiatan
+2️⃣ Tujuan & Manfaat
+3️⃣ Tanggal & Waktu yang diinginkan
+4️⃣ Lokasi pelaksanaan
+5️⃣ Target peserta
+6️⃣ Anggaran yang diperlukan
+7️⃣ Penanggung jawab kegiatan
+8️⃣ Susunan panitia (jika ada)
+
+📞 Hubungi:
+• Ketua RT: 0812-3456-7890
+• WhatsApp Group: bit.ly/wa-rt003
+• Email: clusterkalita01@gmail.com
+
+⏰ Pengajuan minimal 2 minggu sebelum pelaksanaan
+            `;
+            
+            if (confirm(`${proposalForm}\n\nApakah Anda siap mengajukan kegiatan baru?`)) {
+              alert('Silakan hubungi pengurus RT dengan informasi lengkap kegiatan yang ingin diajukan. Tim kami akan membantu merealisasikan ide Anda!');
+            }
           }}
         >
           Ajukan Kegiatan

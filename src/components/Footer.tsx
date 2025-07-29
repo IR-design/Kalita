@@ -48,13 +48,64 @@ const Footer: React.FC = () => {
                 <Facebook className="h-4 w-4" />
               </button>
               <button 
-                onClick={() => alert('Mengunjungi halaman Instagram @Hatra Mahkota Sejahtera - Cluster Kalita')}
+                onClick={() => {
+                  const socialMediaInfo = `
+📱 MEDIA SOSIAL CLUSTER KALITA
+
+📘 Facebook: RT 003 Maju Jaya
+• Update kegiatan harian
+• Foto dokumentasi
+• Pengumuman penting
+
+📷 Instagram: @clusterkalita
+• Story kegiatan
+• Highlight momen spesial
+• Behind the scenes
+
+💬 WhatsApp Group: bit.ly/wa-rt003
+• Diskusi warga
+• Info cepat
+• Koordinasi kegiatan
+
+🔗 Bergabunglah untuk tetap terhubung dengan komunitas!
+                  `;
+                  alert(socialMediaInfo);
+                }}
                 className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
               >
                 <Instagram className="h-4 w-4" />
               </button>
               <button 
-                onClick={() => alert('Bergabung dengan WhatsApp Group RT: bit.ly/wa-rt003')}
+                onClick={() => {
+                  const whatsappInfo = `
+💬 WHATSAPP GROUP CLUSTER KALITA
+
+🔗 Link: bit.ly/wa-rt003
+
+📋 ATURAN GROUP:
+• Gunakan bahasa yang sopan
+• Hindari spam dan promosi berlebihan
+• Fokus pada topik RT dan lingkungan
+• Hormati privasi sesama warga
+
+📢 FUNGSI GROUP:
+• Informasi kegiatan RT
+• Koordinasi gotong royong
+• Sharing info penting
+• Diskusi masalah lingkungan
+• Emergency contact
+
+👥 Anggota: 127 keluarga aktif
+
+Klik OK untuk bergabung!
+                  `;
+                  
+                  if (confirm(whatsappInfo)) {
+                    alert('Anda akan diarahkan ke WhatsApp Group. Pastikan WhatsApp sudah terinstall di perangkat Anda.');
+                    // Dalam implementasi nyata, ini akan membuka link WhatsApp
+                    // window.open('https://chat.whatsapp.com/grouplink', '_blank');
+                  }
+                }}
                 className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />

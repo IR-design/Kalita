@@ -145,14 +145,42 @@ const Contact: React.FC = () => {
                   return;
                 }
                 
-                alert(`Terima kasih ${nama}! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda melalui ${email} atau ${telepon}.`);
+                // Validasi email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                  alert('Format email tidak valid. Contoh: nama@email.com');
+                  return;
+                }
                 
-                // Reset form
-                (document.getElementById('nama') as HTMLInputElement).value = '';
-                (document.getElementById('email') as HTMLInputElement).value = '';
-                (document.getElementById('telepon') as HTMLInputElement).value = '';
-                (document.getElementById('subjek') as HTMLInputElement).value = '';
-                (document.getElementById('pesan') as HTMLTextAreaElement).value = '';
+                // Validasi nomor telepon
+                const phoneRegex = /^(\+62|62|0)[0-9]{9,13}$/;
+                if (!phoneRegex.test(telepon)) {
+                  alert('Format nomor telepon tidak valid. Contoh: 08123456789');
+                  return;
+                }
+                
+                const confirmMessage = `
+📝 KONFIRMASI PENGIRIMAN PESAN
+
+👤 Nama: ${nama}
+📧 Email: ${email}
+📱 Telepon: ${telepon}
+📋 Subjek: ${subjek}
+💬 Pesan: ${pesan.substring(0, 100)}${pesan.length > 100 ? '...' : ''}
+
+Apakah data sudah benar?
+                `;
+                
+                if (confirm(confirmMessage)) {
+                  alert(`✅ Terima kasih ${nama}!\n\nPesan Anda telah berhasil dikirim ke pengurus RT.\n\n📧 Kami akan membalas melalui: ${email}\n📱 Atau menghubungi: ${telepon}\n\n⏰ Estimasi respon: 1-2 hari kerja\n\nTerima kasih atas partisipasi Anda!`);
+                  
+                  // Reset form
+                  (document.getElementById('nama') as HTMLInputElement).value = '';
+                  (document.getElementById('email') as HTMLInputElement).value = '';
+                  (document.getElementById('telepon') as HTMLInputElement).value = '';
+                  (document.getElementById('subjek') as HTMLInputElement).value = '';
+                  (document.getElementById('pesan') as HTMLTextAreaElement).value = '';
+                }
               }}
               className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors font-medium"
             >

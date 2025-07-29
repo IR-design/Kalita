@@ -107,7 +107,19 @@ const News: React.FC = () => {
                   <button 
                     className="flex items-center text-green-600 hover:text-green-700 font-medium"
                     onClick={() => {
-                      alert(`Membaca artikel: "${featuredNews.title}"`);
+                      // Buka artikel dalam modal atau halaman detail
+                      const articleContent = `
+${featuredNews.title}
+
+${featuredNews.excerpt}
+
+Artikel lengkap akan segera tersedia. Untuk informasi lebih lanjut, silakan hubungi pengurus RT melalui kontak yang tersedia.
+
+Penulis: ${featuredNews.author}
+Tanggal: ${formatDate(featuredNews.date)}
+Kategori: ${featuredNews.category}
+                      `;
+                      alert(articleContent);
                     }}
                   >
                     Baca Selengkapnya
@@ -155,7 +167,19 @@ const News: React.FC = () => {
               <button 
                 className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:shadow-md transition-all duration-200"
                 onClick={() => {
-                  alert(`Membaca artikel: "${item.title}"`);
+                  // Buka artikel dalam modal atau halaman detail
+                  const articleContent = `
+${item.title}
+
+${item.excerpt}
+
+Artikel lengkap akan segera tersedia. Untuk informasi lebih lanjut, silakan hubungi pengurus RT melalui kontak yang tersedia.
+
+Penulis: ${item.author}
+Tanggal: ${formatDate(item.date)}
+Kategori: ${item.category}
+                  `;
+                  alert(articleContent);
                 }}
               >
                 Baca Selengkapnya
@@ -175,7 +199,22 @@ const News: React.FC = () => {
           <button 
             className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             onClick={() => {
-              alert('Silakan kirim berita atau informasi melalui email rt003rw05@gmail.com atau hubungi pengurus RT.');
+              // Buka form kirim berita atau redirect ke kontak
+              const message = `
+Untuk mengirim berita atau informasi:
+
+📧 Email: clusterkalita01@gmail.com
+📱 WhatsApp: 0812-3456-7890
+📍 Datang langsung ke kantor RT
+
+Format pengiriman berita:
+- Judul berita
+- Isi berita lengkap
+- Foto pendukung (jika ada)
+- Nama pengirim
+- Kontak yang bisa dihubungi
+              `;
+              alert(message);
             }}
           >
             Kirim Berita

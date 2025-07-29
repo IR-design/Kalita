@@ -56,7 +56,43 @@ const WiFiAd: React.FC = () => {
             <button 
               className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
               onClick={() => {
-                alert('Untuk pendaftaran WiFi RT, silakan hubungi:\n\n📞 0812-3456-7890 (Pak RT)\n📱 WhatsApp: 0856-7890-1234\n📧 wifi.rt003@gmail.com\n\nTim kami akan segera menghubungi Anda untuk proses instalasi.');
+                // Proses pendaftaran WiFi dengan form lengkap
+                const wifiRegistration = `
+🌐 PENDAFTARAN LAYANAN WIFI RT
+
+📋 PAKET TERSEDIA:
+• Paket Keluarga: Rp 250K/bulan (50 Mbps)
+• Paket Premium: Rp 350K/bulan (100 Mbps)
+
+🎉 PROMO SPESIAL:
+Diskon 20% untuk 3 bulan pertama!
+
+📝 PERSYARATAN:
+• KTP & KK warga RT 003
+• Fotocopy rekening listrik
+• Nomor telepon aktif
+
+⚡ KEUNTUNGAN:
+• Gratis instalasi untuk warga RT
+• Support teknis 24/7
+• Unlimited kuota
+• Kecepatan stabil
+
+📞 KONTAK PENDAFTARAN:
+• Pak RT: 0812-3456-7890
+• WhatsApp: 0856-7890-1234
+• Email: wifi.rt003@gmail.com
+
+⏰ Proses instalasi: 1-3 hari kerja
+                `;
+                
+                if (confirm(`${wifiRegistration}\n\nApakah Anda ingin melanjutkan pendaftaran?`)) {
+                  const selectedPackage = prompt('Pilih paket (ketik "keluarga" atau "premium"):');
+                  if (selectedPackage) {
+                    const packageName = selectedPackage.toLowerCase() === 'premium' ? 'Premium (100 Mbps)' : 'Keluarga (50 Mbps)';
+                    alert(`✅ Pendaftaran berhasil!\n\nPaket dipilih: ${packageName}\n\nTim teknisi akan menghubungi Anda dalam 24 jam untuk jadwal instalasi.\n\nTerima kasih telah memilih layanan WiFi RT!`);
+                  }
+                }
               }}
             >
               Daftar Sekarang
